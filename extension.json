@@ -4,7 +4,7 @@
 	"author": [
         "Nicolas Guerra"
     ],
-	"url": "https://www.mediawiki.org/wiki/MwSSE",
+	"url": "https://www.mediawiki.org/wiki/Extension:MwSSE",
 	"description": "MwSSE (Simple Security Extension)",
 	"license-name": "GPL-2.0+",
 	"AutoloadClasses": {
