@@ -8,6 +8,7 @@ Download mw-sse directory, rename it to MwSSE and move it to $MEDIA_WIKI_PATH/ex
 Add the following two lines in LocalSettings.php
 
 wfLoadExtension( 'MwSSE' );
+
 $wgHooks['AuthManagerLoginAuthenticateAudit'][] = 'MwSSEHooks::onlogBadLogin';
 
 For more info: https://www.mediawiki.org/wiki/Extension:MwSSE
