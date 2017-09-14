@@ -12,7 +12,7 @@
 	},
 	"Hooks": {
         "AuthManagerLoginAuthenticateAudit": [
-            "MwSSE::onlogBadLogin"
+            "MwSSEHooks::onlogBadLogin"
         ]
     }
 }
