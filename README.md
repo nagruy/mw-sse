@@ -9,6 +9,4 @@ Add the following two lines in LocalSettings.php
 
 wfLoadExtension( 'MwSSE' );
 
-$wgHooks['AuthManagerLoginAuthenticateAudit'][] = 'MwSSEHooks::onlogBadLogin';
-
 For more info: https://www.mediawiki.org/wiki/Extension:MwSSE
