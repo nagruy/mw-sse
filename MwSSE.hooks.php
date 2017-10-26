@@ -36,10 +36,16 @@ class MwSSEHooks {
 
 		error_log("[MwSSE - Extension] $userName: $ret->status email FROM: $wgEmergencyContact TO: $email");
 
-		$body = "Login attempt! $userName LOGIN";
+		if(filter_input(INPUT_SERVER, 'HTTP_X_FORWARDED_FOR') == "") { // Direct connection
+        		$body = "Login attempt! $userName LOGIN from IP ".filter_input(INPUT_SERVER, 'REMOTE_ADDR');
+			
+	        } else {    // Connection through Reverse-Proxy
+            		$body = "Login attempt! $userName LOGIN from IP ".filter_input(INPUT_SERVER, 'HTTP_X_FORWARDED_FOR');
+        	}
 
 		$headers = "From:".$wgEmergencyContact."\r\n";
 		$mailstatus = mail($email, $wgEmailSubject, $body, $headers);
+	    
 		return false;
     }
 }
