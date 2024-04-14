@@ -1,18 +1,18 @@
 {
 	"name": "MwSSE",
-	"version": "0.0.0",
-	"author": [
-        "Nicolas Guerra"
-    ],
+	"author": "Nicolas Guerra Rocha <nicolas@tectel.com.uy>",
 	"url": "https://www.mediawiki.org/wiki/Extension:MwSSE",
-	"description": "MwSSE (Simple Security Extension)",
-	"license-name": "GPL-2.0+",
+	"description": "MwSSE (MediaWiki Simple Security Extension)",
+	"version": "1.1.0",
+	"license-name": "GPL-3.0-or-later",
 	"AutoloadClasses": {
-		"MwSSEHooks": "MwSSE.hooks.php"
+		"MwSSEHooks": "class-mwsse.php"
 	},
-	"Hooks": {
-        "AuthManagerLoginAuthenticateAudit": [
-            "MwSSEHooks::onlogBadLogin"
-        ]
-    }
+	"Hooks":
+	{
+		"AuthManagerLoginAuthenticateAudit": [
+				"MwSSEHooks::on_login_action"
+		]
+  },
+	"manifest_version": "1"
 }
